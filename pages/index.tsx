@@ -1,26 +1,28 @@
 import styles from '@/styles/Home.module.css';
 import { block } from 'million/react';
 import Head from 'next/head';
-import { useState } from 'react';
-import Image from 'next/legacy/image';
+import { Suspense, useState } from 'react';
+
+// change and ni every time for every change
+//     "million": "file:/Users/aidenybai/Projects/aidenybai/million",
 
 function Img() {
-  return <div>hi</div>;
+  return <div>1</div>;
 }
 
 function Button() {
   const [count, setCount] = useState(0);
   return (
     <div>
-      <div>
-        <Img />
-      </div>
+      <Img />
       <button onClick={() => setCount(count + 1)}>{count}</button>
     </div>
   );
 }
 
 const ButtonBlock = block(Button);
+
+// throw new Error(ButtonBlock);
 
 export default function Home() {
   return (
